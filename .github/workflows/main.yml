@@ -46,16 +46,16 @@ jobs:
     - name: Terraform Plan
       run: terraform plan -input=false
       env:
-        #TF_VAR_access_key: ${{ secrets.access_key }}
-        #TF_VAR_secret_key: ${{ secrets.secret_key }}
+        TF_VAR_access_key: ${{ secrets.access_key }}
+        TF_VAR_secret_key: ${{ secrets.secret_key }}
         TF_VAR_databricks_account_id: ${{ secrets.databricks_account_id }}
         TF_VAR_databricks_account_username: ${{ secrets.databricks_account_username }}
         TF_VAR_databricks_account_password: ${{ secrets.databricks_account_password }}
     
     - name: Terraform Apply
       env:
-        #TF_VAR_access_key: ${{ secrets.access_key }}
-        #TF_VAR_secret_key: ${{ secrets.secret_key }}
+        TF_VAR_access_key: ${{ secrets.access_key }}
+        TF_VAR_secret_key: ${{ secrets.secret_key }}
         TF_VAR_databricks_account_id: ${{ secrets.databricks_account_id }}
         TF_VAR_databricks_account_username: ${{ secrets.databricks_account_username }}
         TF_VAR_databricks_account_password: ${{ secrets.databricks_account_password }}
@@ -64,8 +64,8 @@ jobs:
     
     - name: Terraform Destroy
       env:
-        #TF_VAR_access_key: ${{ secrets.access_key }}
-        #TF_VAR_secret_key: ${{ secrets.secret_key }}
+        TF_VAR_access_key: ${{ secrets.access_key }}
+        TF_VAR_secret_key: ${{ secrets.secret_key }}
         TF_VAR_databricks_account_id: ${{ secrets.databricks_account_id }}
         TF_VAR_databricks_account_username: ${{ secrets.databricks_account_username }}
         TF_VAR_databricks_account_password: ${{ secrets.databricks_account_password }}
