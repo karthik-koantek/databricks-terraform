@@ -14,7 +14,7 @@ resource "databricks_mws_workspaces" "this" {
   network_id               = databricks_mws_networks.this.network_id
 
   token {
-    comment = "Terraform1"
+    comment = "Terraform"
   }
 }
 
