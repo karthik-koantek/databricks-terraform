@@ -1,3 +1,8 @@
+resource "time_sleep" "wait" {
+  depends_on = [aws_iam_role.cross_account_role]
+  create_duration = "180s"
+}
+
 resource "databricks_mws_workspaces" "this" {
   provider        = databricks.mws
   account_id      = var.databricks_account_id
