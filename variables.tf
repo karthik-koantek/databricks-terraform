@@ -11,7 +11,7 @@ variable "cidr_block" {
 }
 
 variable "region" {
-  default = "eu-west-1"
+  default = "us-east-2"
 }
 
 resource "random_string" "naming" {
