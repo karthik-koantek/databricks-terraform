@@ -5,7 +5,7 @@ resource "databricks_mws_workspaces" "this" {
   aws_region      = var.region
   workspace_name  = local.prefix
 
-  #credentials_id           = "test-databricks-clr"
+  credentials_id           = "arn:aws:iam::146620047456:role/test-databricks-clr"
   storage_configuration_id = databricks_mws_storage_configurations.this.storage_configuration_id
   network_id               = databricks_mws_networks.this.network_id
 
