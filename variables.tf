@@ -12,7 +12,7 @@ variable "cidr_block" {
 }
 
 variable "region" {
-  default = "us-east-2"
+  default = "ca-central-1"
 }
 
 resource "random_string" "naming" {
