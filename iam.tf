@@ -17,11 +17,7 @@ resource "aws_iam_role_policy" "this" {
   policy = data.databricks_aws_crossaccount_policy.this.json
 }
 
-resource "time_sleep" "wait" {
-  depends_on = [
-  aws_iam_role.cross_account_role]
-  create_duration = "240s"
-}
+
 
 resource "databricks_mws_credentials" "this" {
   provider         = databricks.mws
