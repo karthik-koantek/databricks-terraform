@@ -1,11 +1,12 @@
-
 resource "databricks_mws_workspaces" "this" {
-  provider        = databricks.mws
-  account_id      = var.databricks_account_id
-  aws_region      = var.region
-  workspace_name  = local.prefix
+  provider       = databricks.mws
+  account_id     = var.databricks_account_id
+  aws_region     = var.region
+  workspace_name = local.prefix
+  access_key = "${var.access_key}"
+  secret_key = "${var.secret_key}"
 
-  credentials_id           = "arn:aws:iam::146620047456:role/test-databricks-clr"
+  credentials_id           = databricks_mws_credentials.this.credentials_id
   storage_configuration_id = databricks_mws_storage_configurations.this.storage_configuration_id
   network_id               = databricks_mws_networks.this.network_id
 
@@ -18,4 +19,7 @@ output "databricks_host" {
   value = databricks_mws_workspaces.this.workspace_url
 }
 
-
+output "databricks_token" {
+  value     = databricks_mws_workspaces.this.token[0].token_value
+  sensitive = true
+}
