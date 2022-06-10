@@ -3,6 +3,7 @@ variable "databricks_account_password" {}
 variable "databricks_account_id" {}
 variable "access_key" {}
 variable "secret_key" {}
+
 variable "tags" {
   default = {}
 }
@@ -12,7 +13,7 @@ variable "cidr_block" {
 }
 
 variable "region" {
-  default = "ca-central-1"
+  default = "eu-west-1"
 }
 
 resource "random_string" "naming" {
