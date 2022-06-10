@@ -20,7 +20,7 @@ resource "aws_iam_role_policy" "this" {
 resource "time_sleep" "wait" {
   depends_on = [
   aws_iam_role.cross_account_role]
-  create_duration = "10s"
+  create_duration = "180s"
 }
 
 resource "databricks_mws_credentials" "this" {
@@ -29,5 +29,5 @@ resource "databricks_mws_credentials" "this" {
   role_arn         = aws_iam_role.cross_account_role.arn
   credentials_name = "${local.prefix}-creds"
   depends_on       = [aws_iam_role_policy.this]
-  depends_on = [time_sleep.wait]
+
 }
