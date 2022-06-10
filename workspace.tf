@@ -3,8 +3,6 @@ resource "databricks_mws_workspaces" "this" {
   account_id     = var.databricks_account_id
   aws_region     = var.region
   workspace_name = local.prefix
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
 
   credentials_id           = databricks_mws_credentials.this.credentials_id
   storage_configuration_id = databricks_mws_storage_configurations.this.storage_configuration_id
