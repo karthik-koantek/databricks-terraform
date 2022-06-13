@@ -1,12 +1,11 @@
 terraform {
   backend "s3" {
     # Replace this with your bucket name!
-    bucket         = "tfstate-test-koan"
-    key            = "global/s3/terraform.tfstate"
-    region         = "eu-central-1"
+    bucket         = "terraform-state-buscket"
+    key            = "databricks/dev/terraform.tfstate"
+    region         = "us-east-2"
     # Replace this with your DynamoDB table name!
-    dynamodb_table = "terraform-up-and-running-locks"
-    encrypt        = true
+    dynamodb_table = "justanother"
   
   }
 }
