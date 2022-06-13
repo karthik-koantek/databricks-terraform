@@ -16,7 +16,7 @@ provider "aws" {
   secret_key = "${var.secret_key}"
 }
 
-// initialize provider in "MWS" mode to provision new workspace
+// initialize provider in "MWS" mode to provision new workspace1
 provider "databricks" {
   alias    = "mws"
   host     = "https://accounts.cloud.databricks.com"
