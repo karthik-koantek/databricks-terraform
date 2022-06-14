@@ -36,10 +36,12 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules1, etc.
     - name: Terraform Init
-      run: terraform init -backend=true
+      run: terraform init  -backend-config="eu-central-1"
       env:
         TF_VAR_access_key: ${{ secrets.access_key }}
         TF_VAR_secret_key: ${{ secrets.secret_key }}
+ 
+
 
     # Checks that all Terraform configuration files adhere to a canonical format
     #- name: Terraform Format
