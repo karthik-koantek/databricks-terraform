@@ -73,4 +73,4 @@ jobs:
         TF_VAR_databricks_account_id: ${{ secrets.databricks_account_id }}
         TF_VAR_databricks_account_username: ${{ secrets.databricks_account_username }}
         TF_VAR_databricks_account_password: ${{ secrets.databricks_account_password }}
-      run: terraform destroy -input=false -auto-approve
+      #run: terraform destroy -input=false -auto-approve
