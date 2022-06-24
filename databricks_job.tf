@@ -5,7 +5,7 @@ data "databricks_node_type" "smallest" {
 }
 
 resource "databricks_notebook" "this" {
-  depends_on = [databricks_mws_workspaces.this]`
+  depends_on = [databricks_mws_workspaces.this]
   path     = "${data.databricks_current_user.me.home}/Terraform"
   language = "PYTHON"
   content_base64 = base64encode(<<-EOT
@@ -16,7 +16,7 @@ resource "databricks_notebook" "this" {
 }
 
 resource "databricks_job" "this" {
-depends_on = [databricks_mws_workspaces.this]`
+depends_on = [databricks_mws_workspaces.this]
   name = "Terraform Demo (${data.databricks_current_user.me.alphanumeric})"
 
   new_cluster {
